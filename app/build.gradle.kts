@@ -34,13 +34,13 @@ android {
     }
 
     compileSdk = 32
-    buildToolsVersion = "32.0.0"
+    buildToolsVersion = "33.0.0"
 
     defaultConfig {
         applicationId = "app.grapheneos.camera"
         minSdk = 29
         targetSdk = 32
-        versionCode = 43
+        versionCode = 44
         versionName = versionCode.toString()
     }
 
@@ -82,6 +82,10 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    lintOptions {
+        disable("LintError")
+    }
 }
 
 dependencies {
@@ -89,7 +93,7 @@ dependencies {
     implementation("com.google.android.material:material:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    val cameraVersion = "1.2.0-alpha02"
+    val cameraVersion = "1.2.0-alpha03"
     implementation("androidx.camera:camera-core:$cameraVersion")
     implementation("androidx.camera:camera-camera2:$cameraVersion")
     implementation("androidx.camera:camera-lifecycle:$cameraVersion")
